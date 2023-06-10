@@ -1,0 +1,21 @@
+﻿Neden Area yapısını kullandık ? 
+
+Area, bir bölüm ve/veya bölge olarak kullandığımız bir yapı. Bizim projemizde Yönetici işlemlerini Blog işlemlerinden ayırmak için 
+Admin Area adında bir yönetim bölümü oluşturduk.
+
+Bu bölümdeki Controller ve View'larımızı projemiz içerisindeki Blog bölümünden ayrı tutuyoruz. Bunu, hem karışıklığı önleyerek daha temiz
+bir proje tasarımı oluşturmak için, hem de bazı çakışma yaratabilecek işlemlerden kaçınmak için yapıyoruz.
+
+Örnek olarak; bizler Admin Area içerisinde bir CategoryController oluşturduk. Buradaki Controller'ı admin tarafındaki kategori işlemlerimiz
+için kullanıyoruz. Şimdi bizim Blog modülümüzde de bir CategoryController'a ihtiyacımız olursa, o zaman ne yapacağız? 
+Blog modülünde bir CategoryController oluşturarak hiç bir sorun yaşamadan işlemlerimize devam edeceğiz. 
+Çünkü; Admin Area ile Blog Area'nın birbirinden ayrı olması dolayısıyla burada Controller isimleri ile ilgili hiç bir isim çakışması
+ile karşılaşmayacağız. Oysaki, Admin Area olmasaydı, bizlerin yeni bir isim bulması gerekirdi...
+
+Ek olarak; farklı modüller arasındaki View, ViewModel ve Layout gibi yapılarımızı da birbirinden ayırmış ve sadeleştirmiş olduk.
+
+Daha ileri seviyede bir örnek vermem gerekirse,
+
+SellerArea (Satıcı Bölümü), CustomerArea (Müşteri Bölümü), ManagementArea (Yönetim Bölümü), 
+AccountingArea (Muhasebe Bölümü) vb. bölümleri olan daha büyük bir projemiz olsaydı, o zaman işin içinden ancak 
+böyle çıkabilirdik. :)

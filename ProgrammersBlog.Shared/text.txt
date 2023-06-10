@@ -1,0 +1,45 @@
+﻿ - EntityBase Class ?
+
+ Veritabanına yazılacak tablolarda ortak bulunmasını istediğimiz alanları burdaki class içersinde 
+topluyor olacağız.
+
+ - IEntity Interface ?
+
+ Bizim imzamız olacak.Yani veritabanına yazılması gereken tabloları,entityleri bizler IEntity ile 
+imzalıyor olacağzı bu sayede veritabanına gidecek sınıflarla ilgili karışıklığı da önlemiş olacağız.
+
+Not:
+
+* Entites klasörü içersinde entites katmanına iş yapacak classlarımızı ve interfacelerimiz olucak.
+Bu interface ve class abstract bir yapı olduğu için tekrar bir klasörleme yapıyoruz.
+
+* Sitemizde kayıt ol kısmı olmayacak.
+
+* Başka projelerde de kullanmak isteyeceğimiz sadece bu projeye özel olmayan işlemleri ProgrammersBlog.Shraed içersinde gerçekleştireceğiz. 
+
+* Generic Repository Pattern sayesinde Data Access Layerdaki classlarımızda ortak kullanacağımız metotları
+burada tanımlıyoruz ve kod yükünden kurtuluyoruz.Bunu shareddaki Data klasöründe tanımlayacağız.
+
+* Kod akışının sırayla işlemediği, işlemlerin birbirini beklemediği, kod akışının işlem durumlarına göre 
+devam ettiği programlamaya Asenkron Programlama denir.
+
+* Task tipi asenkron operasyonu temsil eden bir tip.
+
+* Article,Comment,User gibi sınıflarımızın veritabanıyla ilgili işlemleri yapabilmek için .net core içersinde
+hem soyut hem somut versiyonlarını oluşturmamız gerek.
+
+  Yani örneğin Article sınıfıyla ilgili bir işlem yapacaksam öncellikle IArticleRepository diye bir repository
+oluşturuyorum.Daha sonra bu repository içine IEntityRepository içindeki metotların imzalarını veriyorum daha sonrada
+somut bir class ile içerisini dolduruyorum.
+
+
+
+* Result Yapısı : Service katmanında bir işlem yaptığımızda(yeni bir kategori eklemek gibi) bu işlem başarılı mı 
+yoksa başarısız mı oldu bu konuda frontend(mvc) katmanımızı bilgilendiriyor olacağız.İşlemin sonucuna göre ya bir 
+view döneceğiz ya da başka bir actiona yönlendireceğiz.
+
+* Data Result : Data Result sayesinde Resultlarımız içersinde verilerimizi de taşıyabileceğiz.Result yapımızda 
+bizler yeni bir veri eklediğimizde,güncellediğimizde ya da sildiğimizde bir result dönebiliyoruz.Peki veriyi
+getirmek istersek (bir kategori getirmek istersek ya da listesi) o zaman  Data Result a ihtiyaç duyuyoruz.
+
+

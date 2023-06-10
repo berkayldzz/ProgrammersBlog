@@ -1,0 +1,29 @@
+﻿---Notlar---
+
+* Mapping klasörü, Fluent API kullanarak veritabanına gidecek nesnelerimizin ayarlarını yaptığımız sınıfları
+tutacak klasörümüz.
+
+* Mapping işlemleri veritabanına gidecek nesnelerimizin ayarlarını ve özelliklerini belirlediğimiz işlemlerdir.
+
+* Mapping işlemleri illa codefirst yaklaşımında uygulamamıza gerek yok.Veritbanı hazırsa da mapping işlemlerini kullanabiliriz.
+
+* FluentApi backend tarafında validasyon sağlar.
+
+
+* UnitOfWork tasarım deseniyle;
+   
+  - Tüm repositoryleri tek bir yerden yönetebiliyoruz.Yani servis katmanında örneğin yeni bir kullanıcı eklerken _userRepository e ihtiyacımız olsun.
+Bizler bunu kullanabilmek için ya orda repositorylerimizi newleyeceğiz ya da constructorda(dependency injection ile) bunları veriyor olacağız.
+Ancak bu tasarım deseniyle unitofwork sınıfı üzerinden projemizdeki tüm repositorylere erişebiliyor olacağız.Bir sürü sınıfı newlemek
+yerine unitofwork sınıfını newleyeceğiz.
+
+  - Bu desen aynı zamanda bizlere transaction yapısı sunuyor.Transaction bizim veritabanına gönderdiğimiz verilerin doğrulanması ve
+yönetilmesidir.Örneğin savechanges ile veritabanına sürekli kaydetmek yerine hepsi için bizim verdiğimiz yol üzerinden bir kere
+gerçekleşmesini sağlıyoruz.Yani savechanges işlemini hepsi için bir kere yapıyoruz.
+
+* UnitOfWork tasarım desenini sadece EntityFramework ile değil farklı bir yapıyla da kullanabiliriz.
+
+* FluentApı ile daha önce oluşturduğumuz map sınıflarında veritabanımız oluşurken ilk verilerin eklenmesini sağladık.
+
+* Db initializer sınıfıyla ilk verilerimizi oluşturmak istersek bu işlem proje başladığı zaman gerçekleşir ancak FluentApı ile direkt olarak veritabanımız oluşurken bu işlemi (verilerin eklenmesi) gerçekleştiriyoruz.
+
