@@ -4,7 +4,7 @@ ASP NET Core MVC 5.0 | Entity Framework Core 5 | Fluent API | Generic Repository
 
 ## Kullanılan Araçlar & Alt Yapılar & Teknolojiler
 
--N Katmanlı Mimari
+- N Katmanlı Mimari
 
 
 
