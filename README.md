@@ -37,6 +37,8 @@ ASP NET Core MVC 5.0 | Entity Framework Core 5 | Fluent API | Generic Repository
 - Select2
 - Bootstrap 4.5 Tema Giydirme İşlemleri
 
+![image](https://github.com/berkayldzz/ProgrammersBlog/assets/129628281/09cb1909-79f7-4bbd-95c5-3d64fa4a7212)
+
 
 
 
